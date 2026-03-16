@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp"
+    android:background="@color/surface2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <com.google.android.material.textfield.TextInputLayout
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:hint="Current Master Password" android:layout_marginBottom="12dp"
+      app:passwordToggleEnabled="true" app:boxStrokeColor="@color/accent_blue">
+    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOldMaster"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:inputType="textPassword" android:textColor="@color/text_primary"/>
+  </com.google.android.material.textfield.TextInputLayout>
+  <com.google.android.material.textfield.TextInputLayout
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:hint="New Master Password" android:layout_marginBottom="12dp"
+      app:passwordToggleEnabled="true" app:boxStrokeColor="@color/accent_blue">
+    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etNewMaster"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:inputType="textPassword" android:textColor="@color/text_primary"/>
+  </com.google.android.material.textfield.TextInputLayout>
+  <com.google.android.material.textfield.TextInputLayout
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:hint="Confirm New Password" android:layout_marginBottom="8dp"
+      app:passwordToggleEnabled="true" app:boxStrokeColor="@color/accent_blue">
+    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etConfirmMaster"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:inputType="textPassword" android:textColor="@color/text_primary"/>
+  </com.google.android.material.textfield.TextInputLayout>
+  <TextView android:id="@+id/tvMasterError" android:layout_width="match_parent"
+      android:layout_height="wrap_content" android:textColor="#f87171"
+      android:textSize="12sp" android:visibility="gone"/>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BabaSitaRam Pro</string>
+    <string name="autofill_service_description">BabaSitaRam Pro Password Manager AutoFill</string>
+</resources>

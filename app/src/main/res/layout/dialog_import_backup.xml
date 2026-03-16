@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp"
+    android:background="@color/surface2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <TextView android:id="@+id/tvFileInfo" android:layout_width="match_parent"
+      android:layout_height="wrap_content" android:textSize="12sp"
+      android:textColor="@color/text_secondary" android:layout_marginBottom="14dp"
+      android:lineSpacingMultiplier="1.4"/>
+  <com.google.android.material.textfield.TextInputLayout
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:hint="Master Password" android:layout_marginBottom="8dp"
+      app:passwordToggleEnabled="true" app:boxStrokeColor="@color/accent_blue">
+    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etImportPassword"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:inputType="textPassword" android:textColor="@color/text_primary"/>
+  </com.google.android.material.textfield.TextInputLayout>
+  <TextView android:id="@+id/tvImportError" android:layout_width="match_parent"
+      android:layout_height="wrap_content" android:textColor="#f87171"
+      android:textSize="12sp" android:visibility="gone"/>
+</LinearLayout>

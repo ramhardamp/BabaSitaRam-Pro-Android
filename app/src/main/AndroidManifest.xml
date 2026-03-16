@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="BSR Pro"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BSRPro"
+        android:networkSecurityConfig="@xml/network_security">
+        <activity android:name=".LoginActivity" android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" android:exported="false"/>
+        <activity android:name=".AddEditActivity" android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".SettingsActivity" android:exported="false"/>
+        <activity android:name=".GeneratorActivity" android:exported="false"/>
+        <activity android:name=".BackupActivity" android:exported="false"/>
+        <service android:name=".autofill.BSRAutofillService" android:exported="true"
+            android:permission="android.permission.BIND_AUTOFILL_SERVICE"
+            android:label="BSR Pro AutoFill">
+            <intent-filter>
+                <action android:name="android.service.autofill.AutofillService"/>
+            </intent-filter>
+            <meta-data android:name="android.autofill" android:resource="@xml/autofill_service_config"/>
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:orientation="vertical" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+      <ImageButton android:id="@+id/btnBack" android:layout_width="40dp" android:layout_height="40dp"
+          android:src="@android:drawable/ic_menu_close_clear_cancel"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/text_primary"/>
+      <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+          android:layout_weight="1" android:text="Settings" android:textSize="20sp"
+          android:textStyle="bold" android:textColor="@color/text_primary" android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Security section -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="SECURITY" android:textSize="10sp" android:letterSpacing="0.15"
+        android:textColor="@color/accent_blue" android:textStyle="bold"
+        android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" app:cardBackgroundColor="@color/surface1"
+        app:cardCornerRadius="12dp" app:cardElevation="0dp"
+        app:strokeColor="@color/border" app:strokeWidth="1dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+          android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+          <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+              android:layout_weight="1" android:text="Biometric Unlock"
+              android:textSize="14sp" android:textColor="@color/text_primary"/>
+          <Switch android:id="@+id/switchBiometric" android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingHorizontal="16dp" android:paddingVertical="12dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Auto-Lock" android:textSize="14sp" android:textColor="@color/text_primary"
+              android:layout_marginBottom="6dp"/>
+          <Spinner android:id="@+id/spinnerAutoLock" android:layout_width="match_parent"
+              android:layout_height="44dp" android:background="@drawable/spinner_bg"
+              android:paddingHorizontal="12dp"/>
+        </LinearLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Privacy -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="PRIVACY" android:textSize="10sp" android:letterSpacing="0.15"
+        android:textColor="@color/accent_blue" android:textStyle="bold"
+        android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" app:cardBackgroundColor="@color/surface1"
+        app:cardCornerRadius="12dp" app:cardElevation="0dp"
+        app:strokeColor="@color/border" app:strokeWidth="1dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+          android:orientation="vertical" android:paddingHorizontal="16dp" android:paddingVertical="12dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Clipboard Auto-Clear" android:textSize="14sp"
+            android:textColor="@color/text_primary" android:layout_marginBottom="6dp"/>
+        <Spinner android:id="@+id/spinnerClipClear" android:layout_width="match_parent"
+            android:layout_height="44dp" android:background="@drawable/spinner_bg"
+            android:paddingHorizontal="12dp"/>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Account -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="ACCOUNT" android:textSize="10sp" android:letterSpacing="0.15"
+        android:textColor="@color/accent_blue" android:textStyle="bold"
+        android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+    <Button android:id="@+id/btnBackupRestore" android:layout_width="match_parent"
+        android:layout_height="52dp" android:text="💾 Backup &amp; Restore"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/surface2"
+        android:textColor="@color/text_primary"/>
+    <Button android:id="@+id/btnChangeMaster" android:layout_width="match_parent"
+        android:layout_height="52dp" android:text="Change Master Password"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/surface2"
+        android:textColor="@color/text_primary"/>
+    <Button android:id="@+id/btnResetVault" android:layout_width="match_parent"
+        android:layout_height="52dp" android:text="⚠️ Reset Vault (Delete All)"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#55f87171"
+        android:textColor="#f87171"/>
+
+    <TextView android:id="@+id/tvVersion" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:textColor="@color/text_hint" android:textSize="11sp"
+        android:layout_marginTop="8dp"/>
+  </LinearLayout>
+</ScrollView>

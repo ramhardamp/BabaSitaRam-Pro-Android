@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BSRPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorPrimaryVariant">@color/surface1</item>
+        <item name="colorOnPrimary">@color/bg_dark</item>
+        <item name="colorSecondary">@color/accent_green</item>
+        <item name="colorSurface">@color/surface1</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/surface1</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="materialAlertDialogTheme">@style/BSRDialog</item>
+    </style>
+
+    <style name="BSRDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:colorBackground">@color/surface2</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+    </style>
+</resources>

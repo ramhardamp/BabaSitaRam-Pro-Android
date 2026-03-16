@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <com.google.android.material.appbar.AppBarLayout
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:background="@color/surface1" app:elevation="0dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="14dp">
+
+      <!-- Top row -->
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+          android:orientation="horizontal" android:gravity="center_vertical"
+          android:layout_marginBottom="10dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="🔐 BSR Pro"
+            android:textSize="19sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+        <TextView android:id="@+id/tvCount" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="11sp"
+            android:textColor="@color/accent_blue" android:background="@drawable/badge_bg"
+            android:paddingHorizontal="10dp" android:paddingVertical="4dp"/>
+        <ImageButton android:id="@+id/btnGenerator" android:layout_width="36dp"
+            android:layout_height="36dp" android:src="@android:drawable/ic_menu_add"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_secondary" android:layout_marginStart="8dp"/>
+        <ImageButton android:id="@+id/btnSettings" android:layout_width="36dp"
+            android:layout_height="36dp" android:src="@android:drawable/ic_menu_preferences"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_secondary" android:layout_marginStart="4dp"/>
+      </LinearLayout>
+
+      <!-- Search -->
+      <com.google.android.material.textfield.TextInputLayout
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="match_parent" android:layout_height="wrap_content"
+          android:hint="Search passwords..."
+          app:boxStrokeColor="@color/accent_blue"
+          app:startIconDrawable="@android:drawable/ic_menu_search"
+          app:startIconTint="@color/text_secondary">
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSearch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/text_primary" android:inputType="text"/>
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <!-- Category chips -->
+      <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+          android:scrollbars="none" android:layout_marginTop="10dp">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+          <TextView android:id="@+id/chipAll" android:layout_width="wrap_content"
+              android:layout_height="32dp" android:text="All" android:gravity="center"
+              android:paddingHorizontal="14dp" android:textSize="12sp" android:textStyle="bold"
+              android:background="@drawable/chip_selector" android:textColor="@color/chip_text_selector"
+              android:layout_marginEnd="6dp"/>
+          <TextView android:id="@+id/chipFav" android:layout_width="wrap_content"
+              android:layout_height="32dp" android:text="⭐ Favorites" android:gravity="center"
+              android:paddingHorizontal="14dp" android:textSize="12sp" android:textStyle="bold"
+              android:background="@drawable/chip_selector" android:textColor="@color/chip_text_selector"
+              android:layout_marginEnd="6dp"/>
+          <TextView android:id="@+id/chipBanking" android:layout_width="wrap_content"
+              android:layout_height="32dp" android:text="🏦 Banking" android:gravity="center"
+              android:paddingHorizontal="14dp" android:textSize="12sp" android:textStyle="bold"
+              android:background="@drawable/chip_selector" android:textColor="@color/chip_text_selector"
+              android:layout_marginEnd="6dp"/>
+          <TextView android:id="@+id/chipSocial" android:layout_width="wrap_content"
+              android:layout_height="32dp" android:text="💬 Social" android:gravity="center"
+              android:paddingHorizontal="14dp" android:textSize="12sp" android:textStyle="bold"
+              android:background="@drawable/chip_selector" android:textColor="@color/chip_text_selector"
+              android:layout_marginEnd="6dp"/>
+          <TextView android:id="@+id/chipEmail" android:layout_width="wrap_content"
+              android:layout_height="32dp" android:text="📧 Email" android:gravity="center"
+              android:paddingHorizontal="14dp" android:textSize="12sp" android:textStyle="bold"
+              android:background="@drawable/chip_selector" android:textColor="@color/chip_text_selector"/>
+        </LinearLayout>
+      </HorizontalScrollView>
+    </LinearLayout>
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvPasswords"
+      android:layout_width="match_parent" android:layout_height="match_parent"
+      android:padding="6dp" android:clipToPadding="false"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+  <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:text="🔐&#10;&#10;Koi password nahi&#10;+ button se add karein"
+      android:textAlignment="center" android:gravity="center"
+      android:textSize="15sp" android:textColor="@color/text_secondary"
+      android:lineSpacingMultiplier="1.6" android:visibility="gone"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+      android:id="@+id/fabAdd" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end" android:layout_margin="18dp"
+      android:text="Add" app:icon="@android:drawable/ic_input_add"
+      android:backgroundTint="@color/accent_blue" android:textColor="@color/bg_dark"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
